@@ -1,8 +1,23 @@
 <template>
-  <div id="app">
-		<Header />
-    <MainPage />
-  </div>
+  <v-app
+		class="d-flex justify-center"
+	>
+    <v-app-bar
+			app
+			flat
+			class="d-flex justify-center"
+		>
+      <v-btn plain :ripple="false" to="/MainForm">Главная</v-btn>
+      <v-btn plain :ripple="false" to="/MySites">Мои разработки</v-btn>
+      <v-btn plain :ripple="false" to="/Photos">Фотографии</v-btn>
+      <v-btn plain :ripple="false" to="/Contacts">Контакты</v-btn>
+      <!-- <v-btn plain :ripple="false" to="/404">404</v-btn> -->
+    </v-app-bar>
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
+
 </template>
 
 <script>

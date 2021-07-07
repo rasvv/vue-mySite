@@ -1,15 +1,33 @@
 <template>
-  <div>
-    <a class="header__item" href="index.html">Главная</a>
-    <a class="header__item" href="sites.html">Мои разработки</a>
-    <a class="header__item" href="photo-albums.html">Фотографии</a>
-    <a class="header__item" href="contacts.html">Контакты</a>		
-  </div>
+  <v-app>
+    <MainForm v-if="mainform"/>
+    <MySites v-if="mysites" />
+    <Photos v-if="photos" />
+    <Contacts v-if="contacts" />    
+  </v-app>
 </template>
 
 <script>
+import MainForm from '../pages/MaimForm.vue'
+import MySites from '../pages/MySites.vue'
+import Photos from '../pages/Photos.vue'
+import Contacts from '../pages/Contacts.vue'
 export default {
-  name: 'HelloWorld',
+  name: 'Rasvv',
+  components: {
+    MainForm,
+    MySites,
+    Photos,
+    Contacts
+  },
+  data () {
+    return {
+      mainform: true,
+      mysites: false,
+      photos: false,
+      contacts: false
+    }
+  },
   props: {
     msg: String
   }
