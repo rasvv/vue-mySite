@@ -1,14 +1,14 @@
 <template>
   <v-app>
     <MainForm v-if="mainform"/>
-    <MySites v-if="mysites" />
+    <MySites v-if="currentpage==='MainForm'" />
     <Photos v-if="photos" />
     <Contacts v-if="contacts" />    
   </v-app>
 </template>
 
 <script>
-import MainForm from '../pages/MaimForm.vue'
+import MainForm from '../pages/MainForm.vue'
 import MySites from '../pages/MySites.vue'
 import Photos from '../pages/Photos.vue'
 import Contacts from '../pages/Contacts.vue'
@@ -22,6 +22,7 @@ export default {
   },
   data () {
     return {
+      currentpage: 'MainForm',
       mainform: true,
       mysites: false,
       photos: false,

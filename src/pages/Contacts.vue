@@ -1,7 +1,12 @@
 <template>
-  <v-app>
-    Contacts
-  </v-app>
+<v-container
+  class="d-flex justify-center"
+>
+		<div class="main-body">
+			Contacts
+		</div>
+    
+  </v-container>
   
 </template>
 

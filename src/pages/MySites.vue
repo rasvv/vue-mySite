@@ -1,8 +1,12 @@
 <template>
-  <v-app>
-    MySites
-  </v-app>
-  
+<v-container
+  class="d-flex justify-center"
+>
+		<div class="main-body">
+			MySites
+		</div>
+    
+  </v-container>
 </template>
 
 <script>
