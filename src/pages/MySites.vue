@@ -10,27 +10,22 @@
 			:cols="card.flex"
 		>
 			<v-card
-				:to="card.link"
 				height="500px"
 			>
-				<v-title v-text="card.title"></v-title>	
-				<img
-					:lazy-src="card.src"
-					position="center center"
-					height="250px"
-					width="350px"
-					alt="logo"
-					contain
+				<a 
+					:href="card.link"
 				>
-				<v-img
-					lazy-src="../assets/img/sites/ikso-logo.png"
-					position="center center"
-					height="250px"
-					width="350px"
-					alt="logo"
-					contain
-				> </v-img>
-				<v-card-text v-text="card.description"></v-card-text>
+					<v-title v-text="card.title"></v-title>	
+					<v-img
+						:src="card.src"
+						position="center center"
+						height="250px"
+						width="350px"
+						alt="logo"
+						contain
+					> </v-img>
+					<v-card-text v-text="card.description"></v-card-text>
+				</a>
 			</v-card>
 		</v-col>
 	</v-row>
@@ -39,10 +34,7 @@
 	>
 
 	</v-card>
-		<div class="main-body">
-			MySites
-		</div>
-    
+  
   </v-container>
 </template>
 
@@ -52,28 +44,28 @@ export default {
 		cards: [
 			{
 				title: 'Полиграфия "ИКСО"', 
-				src: '../assets/img/sites/ikso-logo.png', 
+				src: require('../assets/img/sites/ikso-logo.png'), 
 				description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
-				link: './https://ikso.info/',
+				link: 'https://ikso.info/',
 				flex: 3
 			},
 			{
 				title: 'Подсчет расходов', 
-				src: './img/Sites/calculator.png', 
+				src: require('../assets/img/sites/calculator.png'), 
 				description: 'Двухстраничный сайт - результат изучения Vue JS. Предназначен для фиксирования ежедневных расходов.', 
 				link: 'https://rasvv.github.io/vue-dashboard/',
 				flex: 3
 			},
 			{
 				title: 'Tesla', 
-				src: './img/Sites/tesla-logo.png', 
+				src: require('../assets/img/sites/tesla-logo.png'), 
 				description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
 				link: 'https://rasvv.github.io/Tesla/index.html',
 				flex: 3
 			},
 			{
 				title: 'Спорттовары', 
-				src: './img/Sites/logo-logo.png', 
+				src: require('../assets/img/sites/logo-logo.png'), 
 				description: 'Шаблон сайта спортивного интернет-магазина. Написан на html, css и JavaScript.', 
 				link: 'https://rasvv.github.io/Logo-SASS/',
 				flex: 3
@@ -81,10 +73,17 @@ export default {
 
 		]
 	})
-
 }
 </script>
 
-<style>
+<style lang='sass'>
+a 
+	display: block
+	height: 100%
 
+.v-card
+	transition: 0.4s
+
+	&:hover
+		transform: scale(1.025)
 </style>
