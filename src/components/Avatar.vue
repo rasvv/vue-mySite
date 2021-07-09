@@ -1,8 +1,8 @@
 <template>
 	<v-container>
-		<div class="main__img">
-			<img class="main__avatar" src="../assets/img/Avatar.jpg">
-		</div>
+		<v-card class="main__img">
+			<v-img class="main__avatar" src="../assets/img/Avatar.jpg"></v-img>
+		</v-card>
 	</v-container>
 </template>
 
