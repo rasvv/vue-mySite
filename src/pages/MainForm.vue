@@ -12,7 +12,6 @@
 			col="7"
 		>
 			<AboutMe />
-			MainForm
 		</v-col>
 	</v-row>
 

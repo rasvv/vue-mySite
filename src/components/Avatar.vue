@@ -15,11 +15,15 @@ export default {
 }
 </script>
 
-<style>
-.main__avatar {
-	max-height: 100%;
-	max-width: 100%;
-	object-fit: contain;
-}
+<style lang='sass'>
+.v-image 
+	max-height: 75vh
+	max-width: 38vw
+	object-fit: contain
+	text-align: center
+
+.v-sheet.v-card:not(.v-sheet--outlined)
+	border: none
+	box-shadow: none
 
 </style>

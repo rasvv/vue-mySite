@@ -1,49 +1,43 @@
-<template>
-<v-container
-	fluid
-  class="d-flex justify-center"
->
-	<v-row dense>
-		
-		<v-col
-			v-for="card in cards"
-			:key="card.title"
-			:cols="cols"
-		>
-			<v-card
-				height="400px"
-				max-width="300px"
-			>
-				<a 
-					class="cardlink"
-					:href="card.link"
-				>
-					<v-title v-text="card.title"  class="text-h5"></v-title>	
-					<v-img
-						:src="card.src"
-						position="center center"
-						height="250px"
-						alt="logo"
-						contain
-					> </v-img>
-					<v-card-text v-text="card.description"></v-card-text>
-				</a>
-			</v-card>
-		</v-col>
-	</v-row>
-	<v-card
-		class="mx-auto"
-	>
 
-	</v-card>
-  
-  </v-container>
+<template>
+  <v-row>
+    <v-col
+      v-for="n in photosCount"
+      :key="n"
+      class="d-flex child-flex"
+      cols="3"
+    >
+      <v-img
+        :src="require(`../assets/img/${path}/${n}.${extension}`)"
+        :lazy-src="`${path}/${n}.${extension}`"
+        aspect-ratio="1"
+        class="grey lighten-2"
+				height="371"
+				width="371"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
 export default {
 	data: () => ({
-		cols: 'auto',
+		photosCount: 15,
+		path: 'Dasha',
+		extension: 'jpg',
 		cards: [
 			{
 				title: 'Полиграфия "ИКСО"', 
@@ -75,28 +69,5 @@ export default {
 </script>
 
 <style lang='sass'>
-
-.row
-	justify-content: space-around
-
-
-.cardlink 
-	display: block
-	height: 100%
-	text-decoration: none
-	background-color: #eee
-
-.v-card
-	transition: 0.4s
-	margin: 10px 0
-	padding: 5px
-
-
-	&:hover
-		transform: scale(1.025)
-
-
-.v-image__image
-	background-color: #ddd
 
 </style>

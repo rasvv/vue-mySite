@@ -3,7 +3,7 @@
   class="d-flex justify-center"
 >
 		<div class="main-body">
-			Contacts
+			<Photosgrid />
 		</div>
     
   </v-container>
@@ -11,8 +11,12 @@
 </template>
 
 <script>
-export default {
+import Photosgrid from '../components/Photosgrid'
 
+export default {
+	components: {
+		Photosgrid
+	}
 }
 </script>
 

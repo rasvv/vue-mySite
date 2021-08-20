@@ -37,7 +37,7 @@
           class="primary py-4 text-center white--text"
           cols="12"
         >
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — <strong>RasVV</strong>
         </v-col>
       </v-row>
     </v-footer>
@@ -71,7 +71,7 @@ export default {
   min-height: 80vh;
 }
 .v-main {
-  height: calc(100vh - 116px)
+  min-height: calc(100vh - 116px)
 }
   
 </style>
