@@ -3,97 +3,62 @@
 	fluid
   class="d-flex justify-center"
 >
-	<v-row dense>
-		
-		<v-col
-			v-for="card in cards"
-			:key="card.title"
-			:cols="cols"
-		>
-			<v-card
-				height="400px"
-				max-width="300px"
-			>
-				<a 
-					class="cardlink"
-					:href="card.link"
-				>
-					<v-title v-text="card.title"  class="text-h5"></v-title>	
-					<v-img
-						:src="card.src"
-						position="center center"
-						height="350px"
-						alt="logo"
-						contain
-					> </v-img>
-				</a>
-			</v-card>
-		</v-col>
-	</v-row>
-	<v-card
-		class="mx-auto"
-	>
-
-	</v-card>
-  
+	<PhotosLinks
+		@onSetAlbum = 'onSetAlbum'
+		v-if="album === 'links'"
+	/>
+  <Photosgrid
+		@onSetAlbum = 'onSetAlbum'
+		v-else
+	/>
+	<!-- <v-btn @click="onSetAlbum('links')">Refresh</v-btn> -->
   </v-container>
 </template>
 
 <script>
+import PhotosLinks from '../components/PhotosLinks.vue'
+import Photosgrid from '../components/Photosgrid.vue'
+import {mapGetters, mapActions} from 'vuex'
+
+
 export default {
+	components: {
+		PhotosLinks,
+		Photosgrid
+	},
 	data: () => ({
 		album: '',
-		
-		cols: 'auto',
-		cards: [
-			{
-				title: 'Даша', 
-				src: require('../assets/img/Dasha/1.jpg'), 
-				link: 'https://ikso.info/'
-			},
-			{
-				title: 'Вика', 
-				src: require('../assets/img/Tory/Tory1/1.jpg'), 
-				link: 'https://rasvv.github.io/vue-dashboard/'
-			},
-			{
-				title: 'Вика в студии', 
-				src: require('../assets/img/Tory/Tory2/1.jpg'), 
-				link: 'https://rasvv.github.io/Tesla/index.html'
-			},
-			{
-				title: 'Разное', 
-				src: require('../assets/img/Other/6.jpg'), 
-				link: 'https://rasvv.github.io/Logo-SASS/'
-			}
-		]
-	})
+		cols: '',
+		cards: []
+	}),
+	state: {
+	},
+	computed: {
+		...mapGetters([
+			'getAlbum'
+			// 'getPhotoCurrentPage'
+		])
+	},
+	methods: {
+		...mapActions([
+			// 'updatePhotoCurrentPage',
+			'updateAlbum'
+		]),
+		onSetAlbum (album) {
+			this.album = album
+		},
+		onGetAlbum () {
+			this.album = this.getAlbum
+			console.log(this.album);
+		}
+	},
+	mounted() {
+		this.onGetAlbum()
+	}
 }
 </script>
 
 <style lang='sass'>
 
-.row
-	justify-content: space-around
-
-
-.cardlink 
-	display: block
-	height: 100%
-	text-decoration: none
-	// background-color: #eee
-
-.v-card
-	transition: 0.4s
-	margin: 10px 0
-	padding: 5px
-
-
-	&:hover
-		transform: scale(1.025)
-
-
-.v-image__image
-	// background-color: #ddd
 
 </style>

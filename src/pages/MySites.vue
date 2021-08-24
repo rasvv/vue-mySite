@@ -18,7 +18,7 @@
 					class="cardlink"
 					:href="card.link"
 				>
-					<v-title v-text="card.title"  class="text-h5"></v-title>	
+					<v-title v-text="card.title" key="card.title" class="text-h5"></v-title>	
 					<v-img
 						:src="card.src"
 						position="center center"

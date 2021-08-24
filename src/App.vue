@@ -23,7 +23,7 @@
         justify="center"
         no-gutters
       >
-        <v-btn
+        <!-- <v-btn
           v-for="link in links"
           :key="link"
           color="white"
@@ -32,7 +32,7 @@
           class="my-2"
         >
           {{ link }}
-        </v-btn>
+        </v-btn> -->
         <v-col
           class="primary py-4 text-center white--text"
           cols="12"
@@ -57,21 +57,20 @@ export default {
 }
 </script>
 
-<style >
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang='sass'>
+#app 
+  font-family: Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-align: center
+  color: #2c3e50
   /* margin-top: 60px; */
-}
 
-.v-application--wrap {
-  min-height: 80vh;
-}
-.v-main {
+.v-application--wrap 
+  min-height: 80vh
+
+.v-main 
   min-height: calc(100vh - 116px)
-}
+  align-items: center
   
 </style>
