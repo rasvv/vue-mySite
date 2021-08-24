@@ -9,7 +9,11 @@
 	/>
   <Photosgrid
 		@onSetAlbum = 'onSetAlbum'
-		v-else
+		v-if="album === 'grid'"
+	/>
+	<PhotosSlides
+		@onSetAlbum = 'onSetAlbum'
+		v-if="album === 'slides'"
 	/>
 	<!-- <v-btn @click="onSetAlbum('links')">Refresh</v-btn> -->
   </v-container>
@@ -18,13 +22,15 @@
 <script>
 import PhotosLinks from '../components/PhotosLinks.vue'
 import Photosgrid from '../components/Photosgrid.vue'
+import PhotosSlides from '../components/PhotosSlides.vue'
 import {mapGetters, mapActions} from 'vuex'
 
 
 export default {
 	components: {
 		PhotosLinks,
-		Photosgrid
+		Photosgrid,
+		PhotosSlides
 	},
 	data: () => ({
 		album: '',

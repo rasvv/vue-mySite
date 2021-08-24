@@ -1,44 +1,45 @@
 <template>
-<v-container
-	fluid
-  class="d-flex justify-center"
->
-	<v-row dense>
-		
-		<v-col
-			v-for="card in cards"
-			:key="card.title"
-			:cols="cols"
-		>
-			<v-card
-				height="400px"
-				width="300px"
-				@click="onSetAlbum(card)"
-			>
-				<!-- <a 
-					class="cardlink"
-					:href="card.link"
-				> -->
-					<!-- <v-title v-text="card.title"  class="text-h5"></v-title>	 -->
-					<v-img
-						:src="card.src"
-						position="center center"
-						height="350px"
-						alt="logo"
-						contain
-					> </v-img>
-				<!-- </a> -->
-			</v-card>
-		</v-col>
-	</v-row>
-	<v-card
-		class="mx-auto"
-	>
 
-	</v-card>
-  
-  </v-container>
+	<v-container
+		fluid
+		class="d-flex justify-center"
+	>
+		<v-row dense>
+			
+			<v-col
+				v-for="card in cards"
+				:key="card.title"
+				:cols="cols"
+			>
+				<v-card
+					height="400px"
+					width="300px"
+					@click="onSetAlbum(card)"
+				>
+					<a 
+						class="cardlink"
+					>
+						<v-card-title v-text="card.title"  class="text-h5"></v-card-title>	
+						<v-img
+							:src="card.src"
+							position="center center"
+							height="320px"
+							alt="logo"
+							contain
+						> </v-img>
+					</a>
+				</v-card>
+			</v-col>
+		</v-row>
+		<v-card
+			class="mx-auto"
+		>
+
+		</v-card>
+		
+		</v-container>
 </template>
+
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
@@ -90,10 +91,8 @@ export default {
 </script>
 
 <style lang='sass'>
-
 .row
 	justify-content: space-around
-
 
 .cardlink 
 	display: block
@@ -113,5 +112,7 @@ export default {
 
 .v-image__image
 	// background-color: #ddd
+	border: 1px solid #ddd
+
 
 </style>

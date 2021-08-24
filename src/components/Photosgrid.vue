@@ -1,7 +1,11 @@
 
 <template>
   <div>
-    <v-btn @click="onSetAlbum()">Назад</v-btn>
+    <div class="buttons">
+      <v-btn @click="onSetAlbum('links')" class="primary">Назад</v-btn>
+      <v-btn @click="onSetAlbum('slides')" class="primary">Слайды</v-btn>
+    </div>
+
     <v-row>
       <v-col
         v-for="n in photosCount"
@@ -12,10 +16,10 @@
         <v-img
           :src="require(`../assets/img/${path}/${n}.${extension}`)"
           :lazy-src="`${path}/${n}.${extension}`"
-          class="grey lighten-2"
+          class=" lighten-2"
           max-height="371"
           max-width="371"
-          contain='true'
+          contain
         >
           <template v-slot:placeholder>
             <v-row
@@ -52,8 +56,8 @@ export default {
 		])
 	},
   methods: {
-    onSetAlbum () {
-      this.$emit('onSetAlbum', 'links')
+    onSetAlbum (album) {
+      this.$emit('onSetAlbum', album)
     },
     onGetPhotoCurrentPage () {
       console.log(this.getPhotoCurrentPage);
@@ -69,5 +73,8 @@ export default {
 </script>
 
 <style lang='sass'>
-
+.buttons
+  display: flex
+  justify-content: space-between
+  margin-bottom: 10px
 </style>

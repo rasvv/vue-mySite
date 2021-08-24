@@ -18,7 +18,7 @@
 					class="cardlink"
 					:href="card.link"
 				>
-					<v-title v-text="card.title" key="card.title" class="text-h5"></v-title>	
+					<v-card-title v-text="card.title" class="text-h5"></v-card-title>	
 					<v-img
 						:src="card.src"
 						position="center center"
@@ -78,7 +78,6 @@ export default {
 
 .row
 	justify-content: space-around
-
 
 .cardlink 
 	display: block
