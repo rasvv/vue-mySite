@@ -1,12 +1,21 @@
 
 <template>
-  <div>
+  <div >
     <div class="buttons">
       <v-btn @click="onSetAlbum('links')" class="primary">Назад</v-btn>
       <v-btn @click="onSetAlbum('slides')" class="primary">Слайды</v-btn>
     </div>
-
-    <v-row>
+    <v-img
+      v-if="src !== ''"
+      :src="src"
+      :lazy-src="src"
+      class="lighten-2 full-picture hide"
+      contain
+      @click="onClose"
+    ></v-img>
+    <v-row
+      v-if="src === ''"
+    >
       <v-col
         v-for="n in photosCount"
         :key="n"
@@ -16,10 +25,11 @@
         <v-img
           :src="require(`../assets/img/${path}/${n}.${extension}`)"
           :lazy-src="`${path}/${n}.${extension}`"
-          class=" lighten-2"
-          max-height="371"
-          max-width="371"
+          class="lighten-2"
+          height="371"
+          width="371"
           contain
+          @click="onClickPicture(require(`../assets/img/${path}/${n}.${extension}`))"
         >
           <template v-slot:placeholder>
             <v-row
@@ -36,11 +46,13 @@
         </v-img>
       </v-col>
     </v-row>
+
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+
 
 export default {
   data: () => ({
@@ -48,22 +60,32 @@ export default {
     cols: 'auto',
     path: '',
     extension: 'jpg',
+    counterClick: 0,
+    src: ''
   }),
   computed: {
 		...mapGetters([
-			// 'getAlbum'
 			'getPhotoCurrentPage'
 		])
 	},
   methods: {
     onSetAlbum (album) {
       this.$emit('onSetAlbum', album)
+      console.log(album);
+      if (this.path === 'Hockey') {
+        this.$router.push('/vue-mysite')
+      } 
     },
     onGetPhotoCurrentPage () {
       console.log(this.getPhotoCurrentPage);
       this.photosCount = this.getPhotoCurrentPage.count
       this.path = this.getPhotoCurrentPage.link
-      // this.extension = this.getPhotoCurrentPage.extension
+    },
+    onClickPicture(src) {
+      this.src = src
+    },
+    onClose() {
+      this.src = ''
     }
   },
   mounted() {
@@ -77,4 +99,16 @@ export default {
   display: flex
   justify-content: space-between
   margin-bottom: 10px
+
+.slides
+   position: absolute
+
+.full-picture
+   position: fixed
+   width: 100vw
+   height: 100vh
+   left: 0
+   top: 0
+   z-index: 999
+   background-color: #fff
 </style>

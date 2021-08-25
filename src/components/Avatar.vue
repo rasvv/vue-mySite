@@ -18,7 +18,7 @@ export default {
 <style lang='sass'>
 .v-image 
 	max-height: 75vh
-	max-width: 38vw
+	max-width: 30vw
 	object-fit: contain
 	text-align: center
 

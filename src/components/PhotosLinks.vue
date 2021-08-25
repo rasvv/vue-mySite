@@ -31,12 +31,6 @@
 				</v-card>
 			</v-col>
 		</v-row>
-		<v-card
-			class="mx-auto"
-		>
-
-		</v-card>
-		
 		</v-container>
 </template>
 

@@ -34,11 +34,9 @@ export default {
 	},
 	data: () => ({
 		album: '',
-		cols: '',
+		cols: 'auto',
 		cards: []
 	}),
-	state: {
-	},
 	computed: {
 		...mapGetters([
 			'getAlbum'
@@ -52,14 +50,18 @@ export default {
 		]),
 		onSetAlbum (album) {
 			this.album = album
+			this.updateAlbum(album)
 		},
 		onGetAlbum () {
 			this.album = this.getAlbum
-			console.log(this.album);
+			console.log('onGetAlbum: '+this.album);
 		}
 	},
 	mounted() {
 		this.onGetAlbum()
+	},
+	beforeUpdate() {
+		// this.onGetAlbum()
 	}
 }
 </script>

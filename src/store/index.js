@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import sitesJson from './sites.json'
+// import sitesJson from './sites.json'
 // import photosJson from './photos.json'
 
 Vue.use(Vuex)
@@ -14,7 +14,32 @@ export default new Vuex.Store({
 		album: 'links',
 		photoCurrentPage: [],
 		cols: 'auto',
-		mySitesJson: sitesJson,
+		mySitesJson: [
+			{
+				title: 'Полиграфия "ИКСО"', 
+				src: require('../assets/img/sites/ikso-logo.png'), 
+				description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
+				link: 'https://ikso.info/'
+			},
+			{
+				title: 'Подсчет расходов', 
+				src: require('../assets/img/sites/calculator.png'), 
+				description: 'Двухстраничный сайт - результат изучения Vue JS. Предназначен для фиксирования ежедневных расходов.', 
+				link: 'https://rasvv.github.io/vue-dashboard/'
+			},
+			{
+				title: 'Tesla', 
+				src: require('../assets/img/sites/tesla-logo.png'), 
+				description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
+				link: 'https://rasvv.github.io/Tesla/index.html'
+			},
+			{
+				title: 'Спорттовары', 
+				src: require('../assets/img/sites/logo-logo.png'), 
+				description: 'Шаблон сайта спортивного интернет-магазина. Написан на html, css и JavaScript.', 
+				link: 'https://rasvv.github.io/Logo-SASS/'
+			}
+		],
 		// myPhotosJson: photosJson,
 
 

@@ -16,10 +16,12 @@
 			>
 				<a 
 					class="cardlink"
+					target="blank"
 					:href="card.link"
 				>
 					<v-card-title v-text="card.title" class="text-h5"></v-card-title>	
 					<v-img
+						class="backgrounding"
 						:src="card.src"
 						position="center center"
 						height="250px"
@@ -41,36 +43,26 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
 	data: () => ({
 		cols: 'auto',
-		cards: [
-			{
-				title: 'Полиграфия "ИКСО"', 
-				src: require('../assets/img/sites/ikso-logo.png'), 
-				description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
-				link: 'https://ikso.info/'
-			},
-			{
-				title: 'Подсчет расходов', 
-				src: require('../assets/img/sites/calculator.png'), 
-				description: 'Двухстраничный сайт - результат изучения Vue JS. Предназначен для фиксирования ежедневных расходов.', 
-				link: 'https://rasvv.github.io/vue-dashboard/'
-			},
-			{
-				title: 'Tesla', 
-				src: require('../assets/img/sites/tesla-logo.png'), 
-				description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
-				link: 'https://rasvv.github.io/Tesla/index.html'
-			},
-			{
-				title: 'Спорттовары', 
-				src: require('../assets/img/sites/logo-logo.png'), 
-				description: 'Шаблон сайта спортивного интернет-магазина. Написан на html, css и JavaScript.', 
-				link: 'https://rasvv.github.io/Logo-SASS/'
-			}
-		]
-	})
+		cards: []
+	}),
+	computed: {
+		...mapGetters([
+			'getSitesLinks'
+		]),
+	},
+	methods: {
+		onGetSitesLinks () {
+			this.cards = this.getSitesLinks
+		}
+	},
+	mounted() {
+		this.onGetSitesLinks()
+	}
 }
 </script>
 
@@ -95,7 +87,7 @@ export default {
 		transform: scale(1.025)
 
 
-.v-image__image
+.backgrounding
 	background-color: #ddd
 
 </style>
