@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<v-card>
-			<v-img :src='imgsrc'></v-img>
+			<v-img class="avatar" :src='imgsrc'></v-img>
 		</v-card>
 	</v-container>
 </template>
@@ -15,8 +15,8 @@ export default {
 }
 </script>
 
-<style lang='sass'>
-.v-image 
+<style lang='sass' module>
+.avatar.v-image__image
 	max-height: 75vh
 	max-width: 30vw
 	object-fit: contain
