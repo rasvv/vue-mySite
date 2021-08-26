@@ -15,8 +15,8 @@ export default {
 }
 </script>
 
-<style lang='sass' module>
-.avatar.v-image__image
+<style lang='sass'>
+.avatar
 	max-height: 75vh
 	max-width: 30vw
 	object-fit: contain
