@@ -9,7 +9,7 @@
       v-if="src !== ''"
       :src="src"
       :lazy-src="src"
-      class="lighten-2 full-picture hide"
+      class="full-picture"
       contain
       @click="onClose"
     ></v-img>
@@ -101,7 +101,7 @@ export default {
   margin-bottom: 10px
 
 .slides
-   position: absolute
+  //  position: absolute
 
 .full-picture
    position: fixed
