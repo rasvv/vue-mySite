@@ -38,7 +38,14 @@ export default new Vuex.Store({
 				src: require('../assets/img/sites/logo-logo.png'), 
 				description: 'Шаблон сайта спортивного интернет-магазина. Написан на html, css и JavaScript.', 
 				link: 'https://rasvv.github.io/Logo-SASS/'
-			}
+			},
+      {
+        title: "Калькулятор кода РАО",
+        src: require("../assets/img/sites/accounting.png"),
+        description:
+          "Помощник в составлении кода РАО для целей учета и контроля РВ и РАО. Реализован на VueJS",
+        link: "https://rasvv.github.io/vue-calc/"
+      },
 		],
 		// myPhotosJson: photosJson,
 
