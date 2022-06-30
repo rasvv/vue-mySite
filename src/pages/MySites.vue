@@ -22,7 +22,7 @@
 					<v-card-title v-text="card.title" class="text-h5"></v-card-title>	
 					<v-img
 						class="backgrounding"
-						:src="card.src"
+						:src="require(`@/${card.src}`)"
 						position="center center"
 						height="250px"
 						alt="logo"
@@ -68,26 +68,6 @@ export default {
 
 <style lang='sass'>
 
-.row
-	justify-content: space-around
 
-.cardlink 
-	display: block
-	height: 100%
-	text-decoration: none
-	background-color: #eee
-
-.v-card
-	transition: 0.4s
-	margin: 10px 0
-	padding: 5px
-
-
-	&:hover
-		transform: scale(1.025)
-
-
-.backgrounding
-	background-color: #ddd
 
 </style>

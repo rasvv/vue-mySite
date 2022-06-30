@@ -95,20 +95,20 @@ export default {
 </script>
 
 <style lang='sass'>
-.buttons
-  display: flex
-  justify-content: space-between
-  margin-bottom: 10px
+// .buttons
+//   display: flex
+//   justify-content: space-between
+//   margin-bottom: 10px
 
-.slides
-  //  position: absolute
+// .slides
+//   //  position: absolute
 
-.full-picture
-   position: fixed
-   width: 100vw
-   height: 100vh
-   left: 0
-   top: 0
-   z-index: 999
-   background-color: #fff
+// .full-picture
+//    position: fixed
+//    width: 100vw
+//    height: 100vh
+//    left: 0
+//    top: 0
+//    z-index: 999
+//    background-color: #fff
 </style>
