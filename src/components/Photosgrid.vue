@@ -10,6 +10,7 @@
       :src="src"
       :lazy-src="src"
       class="full-picture"
+			max-height="74vh"
       contain
       @click="onClose"
     ></v-img>
@@ -72,9 +73,9 @@ export default {
     onSetAlbum (album) {
       this.$emit('onSetAlbum', album)
       console.log(album);
-      if (this.path === 'Hockey') {
-        this.$router.push('/vue-mysite')
-      } 
+      // if (this.path === 'Hockey') {
+      //   this.$router.push('/vue-mysite')
+      // } 
     },
     onGetPhotoCurrentPage () {
       console.log(this.getPhotoCurrentPage);

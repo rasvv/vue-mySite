@@ -30,16 +30,17 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  overflow: auto
   text-align: center
   color: #2c3e50
   
   /* margin-top: 60px; */
 
 .v-application--wrap 
-  min-height: 80vh
+  min-height: 78vh
 
 .v-main 
-  min-height: calc(100vh - 116px)
+  min-height: calc(100vh - 110px)
   align-items: center
 
 .row
@@ -56,14 +57,20 @@ export default {
   text-decoration: none
   background-color: #eee
 
-.v-card
-  transition: 0.4s
-  margin: 10px 0
-  padding: 5px
 
-  &:hover
-    transform: scale(1.03)
-    transition: 0.4s
+.v-card.on-hover.theme--dark
+  background-color: rgba(#FFF, 0.8)
+  >.v-card__text
+    color: #000
+
+// .v-card
+//   transition: 0.4s
+//   margin: 10px 0
+//   padding: 5px
+
+//   &:hover
+//     transform: scale(1.03)
+//     transition: 0.4s
 
 .backgrounding
   background-color: #ddd
