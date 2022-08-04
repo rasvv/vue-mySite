@@ -74,8 +74,8 @@ export default {
       // this.cards = this.getPhotosLinks
       // this.cards = this.getAlbum
       this.albumName = this.getAlbumName
-      console.log(this.cards);
-      console.log(this.albumName);
+      // console.log(this.cards);
+      // console.log(this.albumName);
     },
     onSetView (card) {
       this.$emit('onSetView', 'grid')
@@ -88,7 +88,7 @@ export default {
   //   this.onGetPhotosLinks()
   // },
   beforeUpdate() {
-    console.log('beforeUpdate');
+    // console.log('beforeUpdate');
     this.onGetPhotosLinks()
   }
 

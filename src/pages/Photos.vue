@@ -23,7 +23,7 @@
 import PhotosLinks from '../components/PhotosLinks.vue'
 import Photosgrid from '../components/Photosgrid.vue'
 import PhotosSlides from '../components/PhotosSlides.vue'
-import {mapGetters, mapActions} from 'vuex'
+import {mapGetters, mapActions, mapState} from 'vuex'
 
 
 export default {
@@ -33,7 +33,6 @@ export default {
 		PhotosSlides
 	},
 	data: () => ({
-		view: '',
 		cols: 'auto'
 	}),
 	computed: {
@@ -41,7 +40,10 @@ export default {
 			'getView',
 			'getAlbum'
 			// 'getPhotoCurrentPage'
-		])
+		]),
+    ...mapState([
+      'view'
+    ])		
 	},
 	methods: {
 		...mapActions([
@@ -52,21 +54,21 @@ export default {
 			this.view = view
 			this.updateView(view)
 		},
-		onGetView () {
-			this.view = this.getView
-			// console.log('onGetView: '+this.view);
-		},
+		// onGetView () {
+		// 	this.view = this.getView
+		// 	// console.log('onGetView: '+this.view);
+		// },
 		onGetAlbum () {
 			this.album = this.getAlbum
 			console.log('Photos.vue - onGetView: '+this.album);
 		}		
 	},
-	mounted() {
-		this.onGetView()
-	},
-	beforeUpdate() {
-		this.onGetAlbum()
-	}
+	// mounted() {
+	// 	this.onGetView()
+	// },
+	// beforeUpdate() {
+	// 	this.onGetAlbum()
+	// }
 }
 </script>
 

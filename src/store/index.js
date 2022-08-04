@@ -45,6 +45,7 @@ export default new Vuex.Store({
       return commit('setPhotoCurrentPage', page)
     },
     updateView ({ commit }, view) {
+      console.log(view);
       return commit('setView', view)
     },
     updateAlbum ({ commit }, album) {
