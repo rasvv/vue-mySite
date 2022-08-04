@@ -51,33 +51,21 @@ export default {
   justify-content: space-between
   margin-bottom: 10px  
 
-.cardlink 
-  display: block
-  height: 100%
-  text-decoration: none
-  background-color: #eee
-
-
-.v-card.on-hover.theme--dark
-  background-color: rgba(#FFF, 0.8)
-  >.v-card__text
-    color: #000
-
-// .v-card
-//   transition: 0.4s
-//   margin: 10px 0
-//   padding: 5px
-
-//   &:hover
-//     transform: scale(1.03)
-//     transition: 0.4s
+.v-card 
+  overflow: hidden
+  transition: .2s ease-in-out
 
 .backgrounding
   background-color: #ddd
   
-.v-image__image
-  // background-color: #ddd
+.bg
+  background-color: #ddd
   border: 1px solid #ddd
+
+.v-image
+  transition: .2s ease-in-out
+  &:hover
+    transform: scale(1.05)
 
 .full-picture
    position: fixed
@@ -88,5 +76,6 @@ export default {
    z-index: 999
    background-color: #fff
 
-
+.text-h5
+  background-color: rgba(#FFF, 0.4)
 </style>

@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Хоккей", 
+		"src": "assets/img/Hockey/1.jpg", 
+		"link": "Hockey",
+		"count": 4
+	},
+	{
+		"title": "Дайвинг", 
+		"src": "assets/img/Diving/6.jpg", 
+		"link": "Diving",
+		"count": 7
+	}					
+]

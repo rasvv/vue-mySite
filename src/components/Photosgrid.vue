@@ -2,8 +2,8 @@
 <template>
   <div >
     <div class="buttons">
-      <v-btn @click="onSetAlbum('links')" class="primary">Назад</v-btn>
-      <v-btn @click="onSetAlbum('slides')" class="primary">Слайды</v-btn>
+      <v-btn @click="onSetView('links')" class="primary">Назад</v-btn>
+      <v-btn @click="onSetView('slides')" class="primary">Слайды</v-btn>
     </div>
     <v-img
       v-if="src !== ''"
@@ -70,9 +70,9 @@ export default {
 		])
 	},
   methods: {
-    onSetAlbum (album) {
-      this.$emit('onSetAlbum', album)
-      console.log(album);
+    onSetView (view) {
+      this.$emit('onSetView', view)
+      console.log(view);
       // if (this.path === 'Hockey') {
       //   this.$router.push('/vue-mysite')
       // } 

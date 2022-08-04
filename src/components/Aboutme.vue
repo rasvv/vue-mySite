@@ -14,7 +14,7 @@
             <v-card-subtitle>
               Я программист со стажем, знаю несколько языков программирования.
               Приходилось писать на 
-              <v-img src='./assets/icon/Delphi.webp'></v-img> Delphi, 
+              <v-img src='@/assets/icon/Basic.jpg'></v-img> Delphi, 
               Basic, Pascal и даже на AutoLisp. Много
               работал с базами данных. В арсенале опыт работы с MS Access, Firebird,
               Oracle, MSSQL, MySQL.
@@ -112,9 +112,9 @@ import { mapActions } from "vuex";
 
 export default {
   methods: {
-    ...mapActions(["updatePhotoCurrentPage", "updateAlbum"]),
+    ...mapActions(["updatePhotoCurrentPage", "updateView"]),
     onChangePage() {
-      this.updateAlbum("grid");
+      this.updateView("grid");
       this.updatePhotoCurrentPage({
         title: "Хоккей}",
         src: require(`../assets/img/Hockey/1.jpg`),

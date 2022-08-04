@@ -22,11 +22,5 @@
 		"src": "assets/img/Other/6.jpg", 
 		"link": "Other",
 		"count": 7
-	},
-	{
-		"title": "Хоккей", 
-		"src": "assets/img/Hockey/1.jpg", 
-		"link": "Hockey",
-		"count": 3
 	}	
 ]

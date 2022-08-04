@@ -4,18 +4,18 @@
   class="d-flex justify-center"
 >
 	<PhotosLinks
-		@onSetAlbum = 'onSetAlbum'
-		v-if="album === 'links'"
+		@onSetView = 'onSetView'
+		v-if="view === 'links'"
 	/>
   <Photosgrid
-		@onSetAlbum = 'onSetAlbum'
-		v-if="album === 'grid'"
+		@onSetView = 'onSetView'
+		v-if="view === 'grid'"
 	/>
 	<PhotosSlides
-		@onSetAlbum = 'onSetAlbum'
-		v-if="album === 'slides'"
+		@onSetView = 'onSetView'
+		v-if="view === 'slides'"
 	/>
-	<!-- <v-btn @click="onSetAlbum('links')">Refresh</v-btn> -->
+	<!-- <v-btn @click="onSetView('links')">Refresh</v-btn> -->
   </v-container>
 </template>
 
@@ -33,12 +33,12 @@ export default {
 		PhotosSlides
 	},
 	data: () => ({
-		album: '',
-		cols: 'auto',
-		cards: []
+		view: '',
+		cols: 'auto'
 	}),
 	computed: {
 		...mapGetters([
+			'getView',
 			'getAlbum'
 			// 'getPhotoCurrentPage'
 		])
@@ -46,22 +46,26 @@ export default {
 	methods: {
 		...mapActions([
 			// 'updatePhotoCurrentPage',
-			'updateAlbum'
+			'updateView'
 		]),
-		onSetAlbum (album) {
-			this.album = album
-			this.updateAlbum(album)
+		onSetView (view) {
+			this.view = view
+			this.updateView(view)
+		},
+		onGetView () {
+			this.view = this.getView
+			// console.log('onGetView: '+this.view);
 		},
 		onGetAlbum () {
 			this.album = this.getAlbum
-			console.log('onGetAlbum: '+this.album);
-		}
+			console.log('Photos.vue - onGetView: '+this.album);
+		}		
 	},
 	mounted() {
-		this.onGetAlbum()
+		this.onGetView()
 	},
 	beforeUpdate() {
-		// this.onGetAlbum()
+		this.onGetAlbum()
 	}
 }
 </script>

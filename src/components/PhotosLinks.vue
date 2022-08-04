@@ -1,83 +1,94 @@
 <template>
+  <v-container>
+      <!-- <h3>{{ albumName }}</h3> -->
+      <v-row width="100%">
+        <v-col cols="12" class="d-flex justify-space-around">
+          <v-hover v-for="card in album" :key="card.title" v-slot="{ hover }">
+            <v-card
+              height="400"
+              width="280"
+              :elevation="hover ? 12 : 2"
+              @click="onSetView(card)"
+            >
+              <v-img
+                :src="require(`@/${card.src}`)"
+                position="center center"
+                height="400"
+                width="280"
+                alt="logo"
+                :class="{ 'on-hover': hover }"
+                cover
+              > 
+              <v-card-title v-text="card.title"  class="text-h5"></v-card-title>	
+              
+              </v-img>
+            </v-card>
+          </v-hover>          
+        </v-col>
 
-  <v-container
-    fluid
-    class="d-flex justify-center"
-  >
-    <v-row dense>
-      
-      <v-col
-        v-for="card in cards"
-        :key="card.title"
-        :cols="cols"
-      >
-        <v-card
-          height="400px"
-          width="300px"
-          @click="onSetAlbum(card)"
-        >
-          <a 
-            class="cardlink"
-          >
-            <v-card-title v-text="card.title"  class="text-h5"></v-card-title>	
-            <v-img
-              :src="require(`@/${card.src}`)"
-              position="center center"
-              height="320px"
-              alt="logo"
-              contain
-            > </v-img>
-          </a>
-        </v-card>
-      </v-col>
-    </v-row>
-    </v-container>
+      </v-row>        
+  </v-container>
 </template>
 
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import {mapGetters, mapActions, mapState} from 'vuex'
 export default {
   props: {
-    album: {
+    view: {
       type: String,
       default: ''
-    }
+    },
+
   },
   data: () => ({
 
-    // album: '',
+    // view: '',
     cols: 'auto',
-    cards: []
+    cards: [],
+    albumName: ''
   }),
   computed: {
     ...mapGetters([
-      'getAlbum',
+      'getView',
       // 'getPhotoCurrentPage',
+      'getAlbum',
       'getPhotosLinks',
-      'getSitesLinks'
+      'getSitesLinks',
+      'getAlbumName',
+
+    ]),
+    ...mapState([
+      'album'
     ])
   },
   methods: {
     ...mapActions([
       'updatePhotoCurrentPage',
-      'updateAlbum'
+      'updateView'
     ]),
-    onGetAlbum () {
-      this.album = this.getAlbum
+    onGetView () {
+      this.view = this.getView
     },
     onGetPhotosLinks () {
-      this.cards = this.getPhotosLinks
+      // this.cards = this.getPhotosLinks
+      // this.cards = this.getAlbum
+      this.albumName = this.getAlbumName
       console.log(this.cards);
+      console.log(this.albumName);
     },
-    onSetAlbum (card) {
-      this.$emit('onSetAlbum', 'grid')
+    onSetView (card) {
+      this.$emit('onSetView', 'grid')
       this.updatePhotoCurrentPage(card)
-      // this.updateAlbum('grid')
-      // props.album = 'grid'
+      // this.updateView('grid')
+      // props.view = 'grid'
     }		
   },
-  mounted () {
+  // mounted () {
+  //   this.onGetPhotosLinks()
+  // },
+  beforeUpdate() {
+    console.log('beforeUpdate');
     this.onGetPhotosLinks()
   }
 
@@ -85,5 +96,7 @@ export default {
 </script>
 
 <style lang='sass'>
+
+ 
 
 </style>

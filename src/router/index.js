@@ -28,6 +28,16 @@ const router = new Router({
       path: '/photos',
       name: 'photos',
       component: () => import('../pages/Photos.vue')
+		},
+		{
+      path: '/hobby',
+      name: 'hobby',
+      component: () => import('../pages/Photos.vue')
+		},
+		{
+      path: '/handmade',
+      name: 'handmade',
+      component: () => import('../pages/Photos.vue')
 		}
 	]
 })

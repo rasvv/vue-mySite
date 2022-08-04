@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="buttons">
-      <v-btn @click="onSetAlbum('grid')" class="primary">Назад</v-btn>
+      <v-btn @click="onSetView('grid')" class="primary">Назад</v-btn>
     </div>
     <v-carousel
 
@@ -34,13 +34,13 @@ export default {
   }),
   computed: {
 		...mapGetters([
-			// 'getAlbum'
+			// 'getView'
 			'getPhotoCurrentPage'
 		])
 	},
   methods: {
-    onSetAlbum (album) {
-      this.$emit('onSetAlbum', album)
+    onSetView (view) {
+      this.$emit('onSetView', view)
     },
     onGetPhotoCurrentPage () {
       console.log(this.getPhotoCurrentPage);

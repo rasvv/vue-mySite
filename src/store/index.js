@@ -3,101 +3,72 @@ import Vuex from 'vuex'
 
 import sitesJson from './sites.json'
 import photosJson from './photos.json'
+import hobbyJson from './hobby.json'
+import handmadeJson from './handmade.json'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-	data () {
+  data () {
 
-	},
-	state: {
-		album: 'links',
-		photoCurrentPage: [],
-		cols: 'auto',
-		// mySitesJson: [
-		// 	{
-		// 		title: 'Полиграфия "ИКСО"', 
-		// 		src: require('../assets/img/sites/ikso-logo.png'), 
-		// 		description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
-		// 		link: 'https://ikso.info/'
-		// 	},
-		// 	{
-		// 		title: 'Подсчет расходов', 
-		// 		src: require('../assets/img/sites/calculator.png'), 
-		// 		description: 'Двухстраничный сайт - результат изучения Vue JS. Предназначен для фиксирования ежедневных расходов.', 
-		// 		link: 'https://rasvv.github.io/vue-dashboard/'
-		// 	},
-		// 	{
-		// 		title: 'Tesla', 
-		// 		src: require('../assets/img/sites/tesla-logo.png'), 
-		// 		description: 'Одностраничный сайт. Написан на html, css и JavaScript.', 
-		// 		link: 'https://rasvv.github.io/Tesla/index.html'
-		// 	},
-		// 	{
-		// 		title: 'Спорттовары', 
-		// 		src: require('../assets/img/sites/logo-logo.png'), 
-		// 		description: 'Шаблон сайта спортивного интернет-магазина. Написан на html, css и JavaScript.', 
-		// 		link: 'https://rasvv.github.io/Logo-SASS/'
-		// 	},
-    //   {
-    //     title: "Калькулятор кода РАО",
-    //     src: require("../assets/img/sites/accounting.png"),
-    //     description:
-    //       "Помощник в составлении кода РАО для целей учета и контроля РВ и РАО. Реализован на VueJS",
-    //     link: "https://rasvv.github.io/vue-calc/"
-    //   },
-		// ],
-		mySitesJson: sitesJson,
-		myPhotosJson: photosJson,
+  },
+  state: {
+    view: 'links', //режим отображения
+    photoCurrentPage: [],
+    cols: 'auto',
+    mySitesJson: sitesJson,
+    myPhotosJson: photosJson,
+    myHobbyJson: hobbyJson,
+    myHandmadeJson: handmadeJson,
+    album: photosJson, //текщий альбом (Фото, Хобби, Сайты)
+    albumName: 'Фотографии'
 
+  },
+  mutations: {
+    setView (state, payload) {
+      state.view = payload
+    },
+    setPhotoCurrentPage (state, payload) {
+      state.photoCurrentPage = payload
+    },
+    setAlbum (state, payload) {
+      // console.log(payload);
+      state.album = payload
+    },
+    setAlbumName (state, payload) {
+      // console.log(payload);
+      state.albumName = payload
+    }					
+  },
+  actions: {
+    updatePhotoCurrentPage ({ commit }, page) {
+      return commit('setPhotoCurrentPage', page)
+    },
+    updateView ({ commit }, view) {
+      return commit('setView', view)
+    },
+    updateAlbum ({ commit }, album) {
+      // console.log('updateAlbum ' + album);
 
-		// myPhotosJson: [
-		// 	{
-		// 		title: "Даша", 
-		// 		src: require(`../assets/img/Dasha/1.jpg`), 
-		// 		link: "Dasha",
-		// 		count: 15
-		// 	},
-		// 	{
-		// 		title: "Вика", 
-		// 		src: require("../assets/img/Tory/Tory2/1.jpg"), 
-		// 		link: "Tory/Tory2",
-		// 		count: 16
-		// 	},
-		// 	{
-		// 		title: "Вика в студии", 
-		// 		src: require(`../assets/img/Tory/Tory1/1.jpg`), 
-		// 		link: "Tory/Tory1",
-		// 		count: 12
-		// 	},
-		// 	{
-		// 		title: "Разное", 
-		// 		src: require(`../assets/img/Other/6.jpg`), 
-		// 		link: "Other",
-		// 		count: 7
-		// 	}
-		// ]
-	},
-	mutations: {
-		setAlbum (state, payload) {
-			state.album = payload
-		},
-		setPhotoCurrentPage (state, payload) {
-			state.photoCurrentPage = payload
-		}
-	},
-	actions: {
-		updatePhotoCurrentPage ({ commit }, page) {
-			return commit('setPhotoCurrentPage', page)
-		},
-		updateAlbum ({ commit }, album) {
-			return commit('setAlbum', album)
-		}
-	},
-	getters: {
-		getAlbum: state => state.album,
-		getPhotoCurrentPage: state => state.photoCurrentPage,
-		getPhotosLinks: state => state.myPhotosJson,
-		getSitesLinks: state => state.mySitesJson
-	}
+      // if (album === 'myHobbyLinks')
+      // return commit('setAlbum', this.state.myHobbyJson)
+      // else if (album === 'myPhotosLinks')
+      // return commit('setAlbum', this.state.myPhotosJson)
+      return commit('setAlbum', album)
+    },
+    updateAlbumName ({ commit }, albumName) {
+      return commit('setAlbumName', albumName)
+    },		
+        // updateLink({ commit }, link)
+  },
+  getters: {
+    getView: state => state.view,
+    getPhotoCurrentPage: state => state.photoCurrentPage,
+    getAlbum: state => state.album,
+    getAlbumName: state => state.albumName,
+    getPhotosLinks: state => state.myPhotosJson,
+    getHobbyLinks: state => state.myHobbyJson,
+    getHandmadeLinks: state => state.myHandmadeJson,
+    getSitesLinks: state => state.mySitesJson
+  }
 })

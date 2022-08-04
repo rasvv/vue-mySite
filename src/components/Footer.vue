@@ -11,8 +11,9 @@
         class="primary py-4 text-center white--text"
         cols="12"
       >
-        {{ new Date().getFullYear() }} — <v-img
-          class="d-inline-block text-center bordered"
+        {{ new Date().getFullYear() }} — 
+				<v-img
+          class="d-inline-block text-center "
           height="26"
           width="100"
           
@@ -30,10 +31,6 @@ export default {
 }
 </script>
 
-<style lang='sass'>
-  .bordered .v-image__image
-    top: 5px
-    margin: 0 auto
-    border: none
-    background-color: none
+<style lang='sass' scoped>
+
 </style>
