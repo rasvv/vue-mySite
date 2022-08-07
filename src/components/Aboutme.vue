@@ -115,12 +115,12 @@ export default {
     ...mapActions(["updatePhotoCurrentPage", "updateView"]),
     onChangePage() {
       this.updateView("grid");
-      this.updatePhotoCurrentPage({
-        title: "Хоккей}",
-        src: require(`../assets/img/Hockey/1.jpg`),
-        link: "Hockey",
-        count: 3,
-      });
+      // this.updatePhotoCurrentPage({
+      //   title: "Хоккей}",
+      //   src: require(`../assets/img/Hockey/1.jpg`),
+      //   link: "Hockey",
+      //   count: 3,
+      // });
       this.$router.push("/photos");
       // window.location.href = "/photos"
     },

@@ -1,14 +1,14 @@
 [
 	{
 		"title": "Булерьян", 
-		"src": "assets/img/Bulerian/12.jpg", 
-		"link": "Bulerian",
+		"src": "assets/img/Handmade/Bulerian/12.jpg", 
+		"link": "Handmade/Bulerian",
 		"count": 13
 	},
 	{
 		"title": "Мангал", 
-		"src": "assets/img/Mangal/17.jpg", 
-		"link": "Mangal",
+		"src": "assets/img/Handmade/Mangal/17.jpg", 
+		"link": "Handmade/Mangal",
 		"count": 20
 	}			
 ]

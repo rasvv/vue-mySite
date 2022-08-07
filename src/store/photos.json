@@ -1,26 +1,32 @@
 [
 	{
 		"title": "Даша", 
-		"src": "assets/img/Dasha/1.jpg", 
-		"link": "Dasha",
+		"src": "assets/img/Photo/Dasha/1.jpg", 
+		"link": "Photo/Dasha",
 		"count": 20
 	},
 	{
 		"title": "Вика", 
-		"src": "assets/img/Tory/Tory1/1.jpg", 
-		"link": "Tory/Tory1",
+		"src": "assets/img/Photo/Tory/Tory1/1.jpg", 
+		"link": "Photo/Tory/Tory1",
 		"count": 12
 	},
 	{
 		"title": "Вика в студии", 
-		"src": "assets/img/Tory/Tory2/1.jpg", 
-		"link": "Tory/Tory2",
+		"src": "assets/img/Photo/Tory/Tory2/1.jpg", 
+		"link": "Photo/Tory/Tory2",
 		"count": 16
 	},
 	{
+		"title": "Дети", 
+		"src": "assets/img/Photo/Children/14.jpg", 
+		"link": "Photo/Children",
+		"count": 26
+	},
+	{
 		"title": "Разное", 
-		"src": "assets/img/Other/6.jpg", 
-		"link": "Other",
+		"src": "assets/img/Photo/Other/6.jpg", 
+		"link": "Photo/Other",
 		"count": 7
 	}	
 ]

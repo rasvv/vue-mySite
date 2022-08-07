@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
   data: () => ({
@@ -39,8 +39,11 @@ export default {
 		])
 	},
   methods: {
+    ...mapActions([
+      'updateView'
+    ]),
     onSetView (view) {
-      this.$emit('onSetView', view)
+      this.updateView(view)
     },
     onGetPhotoCurrentPage () {
       console.log(this.getPhotoCurrentPage);

@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 
 
 export default {
@@ -70,8 +70,11 @@ export default {
 		])
 	},
   methods: {
+    ...mapActions([
+      'updateView'
+    ]),
     onSetView (view) {
-      this.$emit('onSetView', view)
+      this.updateView(view)
       console.log(view);
       // if (this.path === 'Hockey') {
       //   this.$router.push('/vue-mysite')
@@ -81,6 +84,7 @@ export default {
       console.log(this.getPhotoCurrentPage);
       this.photosCount = this.getPhotoCurrentPage.count
       this.path = this.getPhotoCurrentPage.link
+      console.log(this.path);
     },
     onClickPicture(src) {
       this.src = src

@@ -4,15 +4,12 @@
   class="d-flex justify-center"
 >
 	<PhotosLinks
-		@onSetView = 'onSetView'
 		v-if="view === 'links'"
 	/>
   <Photosgrid
-		@onSetView = 'onSetView'
 		v-if="view === 'grid'"
 	/>
 	<PhotosSlides
-		@onSetView = 'onSetView'
 		v-if="view === 'slides'"
 	/>
 	<!-- <v-btn @click="onSetView('links')">Refresh</v-btn> -->

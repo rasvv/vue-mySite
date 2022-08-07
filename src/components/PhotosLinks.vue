@@ -78,10 +78,8 @@ export default {
       // console.log(this.albumName);
     },
     onSetView (card) {
-      this.$emit('onSetView', 'grid')
       this.updatePhotoCurrentPage(card)
-      // this.updateView('grid')
-      // props.view = 'grid'
+      this.updateView('grid')
     }		
   },
   // mounted () {

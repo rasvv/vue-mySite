@@ -1,14 +1,14 @@
 [
 	{
 		"title": "Хоккей", 
-		"src": "assets/img/Hockey/1.jpg", 
-		"link": "Hockey",
+		"src": "assets/img/Hobby/Hockey/1.jpg", 
+		"link": "Hobby/Hockey",
 		"count": 4
 	},
 	{
 		"title": "Дайвинг", 
-		"src": "assets/img/Diving/6.jpg", 
-		"link": "Diving",
+		"src": "assets/img/Hobby/Diving/6.jpg", 
+		"link": "Hobby/Diving",
 		"count": 7
 	}					
 ]
