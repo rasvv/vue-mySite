@@ -10,5 +10,11 @@
 		"src": "assets/img/Hobby/Diving/6.jpg", 
 		"link": "Hobby/Diving",
 		"count": 7
-	}					
+	},
+	{
+		"title": "Диснай", 
+		"src": "assets/img/Hobby/Dysnai/28.jpg", 
+		"link": "Hobby/Dysnai",
+		"count": 38
+	}
 ]
