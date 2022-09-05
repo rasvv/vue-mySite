@@ -9,6 +9,7 @@
       <v-btn color="primary" depressed @click="onSetAlbum(getPhotosLinks)" :ripple="false" to="/photos">Фотографии</v-btn>
       <v-btn color="primary" depressed @click="onSetAlbum(getHobbyLinks)" :ripple="false" to="/hobby">Увлечения</v-btn>
       <v-btn color="primary" depressed @click="onSetAlbum(getHandmadeLinks)" :ripple="false" to="/handmade">Поделки</v-btn>
+      <v-btn color="primary" depressed :ripple="false" to="/dysnai">Диснай</v-btn>
       <!-- <v-btn color="primary" depressed :ripple="false" to="/contacts">Контакты</v-btn> -->
     </v-app-bar>
 </template>

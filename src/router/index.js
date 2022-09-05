@@ -38,6 +38,11 @@ const router = new Router({
       path: '/handmade',
       name: 'handmade',
       component: () => import('../pages/Photos.vue')
+		},
+		{
+      path: '/dysnai',
+      name: 'dysnai',
+      component: () => import('../pages/Dysnai.vue')
 		}
 	]
 })

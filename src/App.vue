@@ -39,6 +39,19 @@ export default {
 .v-application--wrap 
   min-height: 78vh
 
+.avatar
+  max-height: 75vh
+  max-width: 30vw
+  object-fit: contain
+  text-align: center
+
+.imgintext
+  display: flex
+  justify-content: space-around
+  margin-bottom: 20px 
+  flex-wrap: wrap
+  gap: 10px
+
 .v-main 
   min-height: calc(100vh - 110px)
   align-items: center

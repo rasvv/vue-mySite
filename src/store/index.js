@@ -5,6 +5,7 @@ import sitesJson from './sites.json'
 import photosJson from './photos.json'
 import hobbyJson from './hobby.json'
 import handmadeJson from './handmade.json'
+import dysnaiJson from './dysnai2005.json'
 
 Vue.use(Vuex)
 
@@ -20,6 +21,7 @@ export default new Vuex.Store({
     myPhotosJson: photosJson,
     myHobbyJson: hobbyJson,
     myHandmadeJson: handmadeJson,
+    myDysnaiJson: dysnaiJson,
     album: photosJson, //текщий альбом (Фото, Хобби, Сайты)
     albumName: 'Фотографии'
 
@@ -70,6 +72,7 @@ export default new Vuex.Store({
     getPhotosLinks: state => state.myPhotosJson,
     getHobbyLinks: state => state.myHobbyJson,
     getHandmadeLinks: state => state.myHandmadeJson,
+    getDysnaiLinks: state => state.myDysnaiJson,
     getSitesLinks: state => state.mySitesJson
   }
 })

@@ -16,11 +16,7 @@ export default {
 </script>
 
 <style lang='sass'>
-.avatar
-	max-height: 75vh
-	max-width: 30vw
-	object-fit: contain
-	text-align: center
+
 
 .v-sheet.v-card:not(.v-sheet--outlined)
 	border: none
