@@ -4,12 +4,12 @@
 >
 	<v-row>
 		<v-col
-			col="5"
+			cols="4"
 		>
 			<Avatar />
 		</v-col>
 		<v-col
-			col="7"
+			cols="8"
 		>
 			<AboutMe />
 		</v-col>

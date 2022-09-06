@@ -40,8 +40,8 @@ export default {
   min-height: 78vh
 
 .avatar
-  max-height: 75vh
-  max-width: 30vw
+  height: 50vh
+  width: 20vw
   object-fit: contain
   text-align: center
 

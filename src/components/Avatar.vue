@@ -1,5 +1,7 @@
 <template>
-	<v-container>
+	<v-container fill-height class="d-flex justify-center align-center">
+    <h2>Здравствуйте! Меня зовут <i><b>Валерий Рассолов</b></i></h2>
+    <h3>Мне {{ age }} лет. Обо мне и моих интересах вы узнаете здесь</h3>		
 		<v-card>
 			<v-img class="avatar" :src='imgsrc'></v-img>
 		</v-card>
@@ -10,8 +12,12 @@
 export default {
 	data: () => ({
 		imgsrc: require('../assets/img/Avatar.jpg')
-	})
-
+	}),
+  computed: {
+    age() {
+      return '47'
+    }
+	}
 }
 </script>
 
