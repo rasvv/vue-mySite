@@ -8,13 +8,11 @@
           </v-card-title>
 
           <v-card-subtitle>
-            Программированием увлекаюсь со школы, знаю несколько языков
-            программирования. Приходилось писать на Delphi, Basic, Pascal и даже
+            Программированием увлекаюсь со школы, знаю несколько языков. Приходилось писать на Delphi, Basic, Pascal, C#, Python и даже
             на AutoLisp. Много работал с базами данных. В арсенале опыт работы с
-            MS Access, Firebird, Oracle, MSSQL, MySQL. Дополнительно закончил
+            MS Access, Firebird, Oracle, MSSQL, MySQL, Postgree. Дополнительно закончил
             обучение на факультете "Frontend-разработки" в образовательном
-            центре
-            <a target="blank" href="https://geekbrains.ru">GeekBrains</a>.
+            центре GeekBrains.
             Изучил язык разметки HTML и язык таблиц стилей CSS. Интенсивно
             изучаю JavaScript. Освоил фреймворки: VueJS и ReactJS. Осуществлял
             верстку интерфейса, разрабатываемого на Angular. С моими проектами
@@ -41,7 +39,7 @@
             вхохновляли мои дочери. Их фотографии и еще кое-что вы также найдете
             на этом сайте .
             <v-card-actions class="d-flex justify-center">
-              <v-btn @click="onSetAlbum(getPhotosLinks)" to="/photos">
+              <v-btn depressed @click="setAlbum(getPhotosLinks)" :ripple="false" to="/photos">
                 <!-- <router-link to="/mysites">здесь</router-link>                 -->
                 Фотографии
               </v-btn>
@@ -61,7 +59,7 @@
           фотографиях этапы изготовления.
           <v-card-subtitle class="d-flex justify-center mt-1">
             <v-card-actions>
-              <v-btn @click="onSetAlbum(getHandmadeLinks)" to="/handmade">
+              <v-btn depressed @click="setAlbum(getHandmadeLinks)" :ripple="false" to="/handmade">
                 <!-- <router-link to="/mysites">здесь</router-link>                 -->
                 Поделки
               </v-btn>
@@ -78,13 +76,13 @@
           </v-card-title>
 
           <v-card-subtitle>
-            Еще я увлекаюсь <a @click="onChangePage">хоккеем</a> - игрой,
+            Еще я увлекаюсь хоккеем - игрой,
             которая, по моему мнению является самой командной. "В хоккей играют
             настоящие мужчины - трус не играет в хоккей!" В этих строках звучит
             главный посыл к игрокам и эта песня не зря стала гимном
             замечательной игры.
             <v-card-actions class="d-flex justify-center">
-              <v-btn @click="onSetAlbum(getHobbyLinks)" to="/hobby">
+              <v-btn depressed @click="setAlbum(getHobbyLinks)" :ripple="false" to="/hobby">
                 <!-- <router-link to="/mysites">здесь</router-link>                 -->
                 Спорт
               </v-btn>
@@ -107,13 +105,12 @@ export default {
 
   methods: {
     ...mapActions(["updateAlbum", "updateView"]),
-    onChangePage() {
-      this.updateView("grid");
-      this.$router.push("/photos");
-    },
-    onSetAlbum(album) {
+    setAlbum(album) {
+      console.log(album);
       this.updateAlbum(album);
+      console.log('this.updateAlbum(album)');
       this.updateView("links");
+      console.log('this.updateView("links")');
     },
   },
   computed: {

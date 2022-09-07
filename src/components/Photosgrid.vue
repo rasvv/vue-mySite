@@ -1,6 +1,5 @@
-
 <template>
-  <div >
+  <div>
     <div class="buttons">
       <v-btn @click="onSetView('links')" class="primary">Назад</v-btn>
       <v-btn @click="onSetView('slides')" class="primary">Слайды</v-btn>
@@ -10,13 +9,12 @@
       :src="src"
       :lazy-src="src"
       class="full-picture"
-			max-height="74vh"
+      max-height="74vh"
       contain
       @click="onClose"
-    ></v-img>
-    <v-row
-      v-if="src === ''"
     >
+    </v-img>
+    <v-row v-if="src === ''">
       <v-col
         v-for="n in photosCount"
         :key="n"
@@ -30,14 +28,12 @@
           height="371"
           width="371"
           contain
-          @click="onClickPicture(require(`../assets/img/${path}/${n}.${extension}`))"
+          @click="
+            onClickPicture(require(`../assets/img/${path}/${n}.${extension}`))
+          "
         >
           <template v-slot:placeholder>
-            <v-row
-              class="fill-height ma-0"
-              align="center"
-              justify="center"
-            >
+            <v-row class="fill-height ma-0" align="center" justify="center">
               <v-progress-circular
                 indeterminate
                 color="grey lighten-5"
@@ -47,59 +43,53 @@
         </v-img>
       </v-col>
     </v-row>
-
   </div>
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
-
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: () => ({
     photosCount: 0,
-    cols: 'auto',
-    path: '',
-    extension: 'jpg',
+    cols: "auto",
+    path: "",
+    extension: "jpg",
     counterClick: 0,
-    src: ''
+    src: "",
   }),
   computed: {
-		...mapGetters([
-			'getPhotoCurrentPage'
-		])
-	},
+    ...mapGetters(["getPhotoCurrentPage"]),
+  },
   methods: {
-    ...mapActions([
-      'updateView'
-    ]),
-    onSetView (view) {
-      this.updateView(view)
+    ...mapActions(["updateView"]),
+    onSetView(view) {
+      this.updateView(view);
       console.log(view);
       // if (this.path === 'Hockey') {
       //   this.$router.push('/vue-mysite')
-      // } 
+      // }
     },
-    onGetPhotoCurrentPage () {
+    onGetPhotoCurrentPage() {
       console.log(this.getPhotoCurrentPage);
-      this.photosCount = this.getPhotoCurrentPage.count
-      this.path = this.getPhotoCurrentPage.link
+      this.photosCount = this.getPhotoCurrentPage.count;
+      this.path = this.getPhotoCurrentPage.link;
       console.log(this.path);
     },
     onClickPicture(src) {
-      this.src = src
+      this.src = src;
     },
     onClose() {
-      this.src = ''
-    }
+      this.src = "";
+    },
   },
   mounted() {
-    this.onGetPhotoCurrentPage()
-  }
-}
+    this.onGetPhotoCurrentPage();
+  },
+};
 </script>
 
-<style lang='sass'>
+<style lang="sass">
 // .buttons
 //   display: flex
 //   justify-content: space-between
