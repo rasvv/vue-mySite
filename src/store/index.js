@@ -34,7 +34,7 @@ export default new Vuex.Store({
       state.photoCurrentPage = payload
     },
     setAlbum (state, payload) {
-      // console.log(payload);
+      console.log(payload);
       state.album = payload
     },
     setAlbumName (state, payload) {
@@ -51,7 +51,7 @@ export default new Vuex.Store({
       return commit('setView', view)
     },
     updateAlbum ({ commit }, album) {
-      // console.log('updateAlbum ' + album);
+      console.log('updateAlbum ' + album);
 
       // if (album === 'myHobbyLinks')
       // return commit('setAlbum', this.state.myHobbyJson)

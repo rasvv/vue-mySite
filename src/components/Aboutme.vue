@@ -2,35 +2,36 @@
   <v-container>
     <v-row dense>
       <v-col cols="12">
-        <v-card color="#385F73" dark>
-          <v-card-title class="text-center">
+        <v-card color="#385F73" dark to="/mysites">
+          <v-card-title class="d-flex justify-center">
             Программирование
           </v-card-title>
 
           <v-card-subtitle>
-            Программированием увлекаюсь со школы, знаю несколько языков. Приходилось писать на Delphi, Basic, Pascal, C#, Python и даже
-            на AutoLisp. Много работал с базами данных. В арсенале опыт работы с
-            MS Access, Firebird, Oracle, MSSQL, MySQL, Postgree. Дополнительно закончил
-            обучение на факультете "Frontend-разработки" в образовательном
-            центре GeekBrains.
-            Изучил язык разметки HTML и язык таблиц стилей CSS. Интенсивно
-            изучаю JavaScript. Освоил фреймворки: VueJS и ReactJS. Осуществлял
-            верстку интерфейса, разрабатываемого на Angular. С моими проектами
-            можно ознакомиться на этом сайте.
-            <v-card-actions class="d-flex justify-center align-end">
-              <v-btn to="/mysites">
-                <!-- <router-link to="/mysites">здесь</router-link>                 -->
-                Проекты
-              </v-btn>
-            </v-card-actions>
+            <p>
+              Программированием увлекаюсь со школы, знаю несколько языков.
+              Приходилось писать на Delphi, Basic, Pascal, C#, Python и даже на
+              AutoLisp. Много работал с базами данных. В арсенале опыт работы с
+              MS Access, Firebird, Oracle, MSSQL, MySQL, Postgree. Дополнительно
+              закончил обучение на факультете "Frontend-разработки" в
+              образовательном центре GeekBrains. Изучил язык разметки HTML и
+              язык таблиц стилей CSS. Интенсивно изучаю JavaScript. Освоил
+              фреймворки: VueJS и ReactJS. Осуществлял верстку интерфейса,
+              разрабатываемого на Angular. С моими проектами можно ознакомиться
+              на этом сайте.
+            </p>
           </v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
     <v-row dense>
       <v-col cols="12">
-        <v-card color="#116062" dark>
-          <v-card-title>
+        <v-card
+          color="#116062"
+          dark
+          @click="setAlbum(getPhotosLinks, '/photos')"
+        >
+          <v-card-title class="d-flex justify-center">
             Фотография
           </v-card-title>
 
@@ -38,55 +39,53 @@
             Я очень люблю фотографировать. На творческие успехи меня всегда
             вхохновляли мои дочери. Их фотографии и еще кое-что вы также найдете
             на этом сайте .
-            <v-card-actions class="d-flex justify-center">
-              <v-btn depressed @click="setAlbum(getPhotosLinks)" :ripple="false" to="/photos">
-                <!-- <router-link to="/mysites">здесь</router-link>                 -->
-                Фотографии
-              </v-btn>
-            </v-card-actions>
           </v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
     <v-row dense>
       <v-col cols="12">
-        <v-card color="#425169" dark>
-          <v-card-title>
+        <v-card
+          color="#425169"
+          dark
+          @click="setAlbum(getHandmadeLinks, '/handmade')"
+        >
+          <v-card-title class="d-flex justify-center">
             Поделки
           </v-card-title>
-          В свободное время люблю мастерить что-либо из металла или дерева.
-          Сварил несколько печей для бань или гаражей. Также делаю монгалы. На
-          фотографиях этапы изготовления.
+
           <v-card-subtitle class="d-flex justify-center mt-1">
-            <v-card-actions>
-              <v-btn depressed @click="setAlbum(getHandmadeLinks)" :ripple="false" to="/handmade">
-                <!-- <router-link to="/mysites">здесь</router-link>                 -->
-                Поделки
-              </v-btn>
-            </v-card-actions>
+            В свободное время люблю мастерить что-либо из металла или дерева.
+            Сварил несколько печей для бань или гаражей. Также делаю монгалы. На
+            фотографиях этапы изготовления.
           </v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
     <v-row dense>
       <v-col cols="12">
-        <v-card color="#3b444b" dark>
-          <v-card-title>
-            Спорт
+        <v-card color="#3b444b" dark @click="setAlbum(getHobbyLinks, '/hobby')">
+          <v-card-title class="d-flex justify-center">
+            Увлечения
           </v-card-title>
 
           <v-card-subtitle>
-            Еще я увлекаюсь хоккеем - игрой,
-            которая, по моему мнению является самой командной. "В хоккей играют
-            настоящие мужчины - трус не играет в хоккей!" В этих строках звучит
-            главный посыл к игрокам и эта песня не зря стала гимном
-            замечательной игры.
-            <v-card-actions class="d-flex justify-center">
-              <v-btn depressed @click="setAlbum(getHobbyLinks)" :ripple="false" to="/hobby">
-                <!-- <router-link to="/mysites">здесь</router-link>                 -->
-                Спорт
-              </v-btn>
-            </v-card-actions>
+            <v-card-subtitle dark>
+              Еще я увлекаюсь хоккеем - игрой, которая, по моему мнению является
+              самой командной. "В хоккей играют настоящие мужчины - трус не
+              играет в хоккей!" В этих строках звучит главный посыл к игрокам и
+              эта песня не зря стала гимном замечательной игры.
+            </v-card-subtitle>
+            <v-card-subtitle>
+              В 2021 году я впервые понырял с аквалангом - это были незабываемые
+              впечатления
+            </v-card-subtitle>
+            <v-card-subtitle to="/dysnai">
+              Я пять раз был на фестивалях молодых атомщиков, как в России, так
+              и в Литве. О моих впечатлениях о поездке на Диснай-2005 можно
+              прочитать
+              <a href="/dysnai">здесь</a>
+            </v-card-subtitle>
           </v-card-subtitle>
         </v-card>
       </v-col>
@@ -105,12 +104,10 @@ export default {
 
   methods: {
     ...mapActions(["updateAlbum", "updateView"]),
-    setAlbum(album) {
-      console.log(album);
+    setAlbum(album, page) {
       this.updateAlbum(album);
-      console.log('this.updateAlbum(album)');
       this.updateView("links");
-      console.log('this.updateView("links")');
+      this.$router.push(page);
     },
   },
   computed: {
