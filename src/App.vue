@@ -34,6 +34,7 @@ html
   // overflow: hidden
   text-align: center
   color: #2c3e50
+  height: 100vh !important
 
   /* margin-top: 60px; */
 
@@ -59,6 +60,10 @@ html
 
 .row
   justify-content: space-around
+
+.grids
+  gap: 20px
+  flex-wrap: wrap
 
 .buttons
   display: flex
