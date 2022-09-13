@@ -1,42 +1,39 @@
 <template>
-  <v-app
-    class="d-flex justify-center"
-  >
+  <v-app class="d-flex justify-center">
     <Header />
     <v-main>
       <router-view />
     </v-main>
     <Footer />
   </v-app>
-
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 // import MainPage from './components/MainPage.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
-<style lang='sass'>
-#app 
+<style lang="sass">
+#app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   overflow: auto
   text-align: center
   color: #2c3e50
-  
+
   /* margin-top: 60px; */
 
-.v-application--wrap 
+.v-application--wrap
   min-height: 78vh
 
 .avatar
@@ -48,12 +45,12 @@ export default {
 .imgintext
   display: flex
   justify-content: space-around
-  margin-bottom: 20px 
+  margin-bottom: 20px
   flex-wrap: wrap
   gap: 10px
 
-.v-main 
-  min-height: calc(100vh - 110px)
+.v-main
+  // min-height: calc(100vh - 110px)
   align-items: center
 
 .row
@@ -62,15 +59,15 @@ export default {
 .buttons
   display: flex
   justify-content: space-between
-  margin-bottom: 10px  
+  margin-bottom: 10px
 
-.v-card 
+.v-card
   overflow: hidden
   transition: .2s ease-in-out
 
 .backgrounding
   background-color: #ddd
-  
+
 .bg
   background-color: #ddd
   border: 1px solid #ddd
