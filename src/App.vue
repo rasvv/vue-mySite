@@ -1,5 +1,5 @@
 <template>
-  <v-app class="d-flex justify-center">
+  <v-app height="100vh" class="d-flex justify-center">
     <Header />
     <v-main>
       <router-view />
