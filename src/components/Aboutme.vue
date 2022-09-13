@@ -80,11 +80,11 @@
               В 2021 году я впервые понырял с аквалангом - это были незабываемые
               впечатления
             </v-card-subtitle>
-            <v-card-subtitle to="/dysnai">
+            <v-card-subtitle>
               Я пять раз был на фестивалях молодых атомщиков, как в России, так
               и в Литве. О моих впечатлениях о поездке на Диснай-2005 можно
               прочитать
-              <a href="/dysnai">здесь</a>
+              <a @click="setPath('/dysnai')">здесь</a>
             </v-card-subtitle>
           </v-card-subtitle>
         </v-card>
@@ -107,6 +107,9 @@ export default {
     setAlbum(album, page) {
       this.updateAlbum(album);
       this.updateView("links");
+      this.setPath(page);
+    },
+    setPath(page) {
       this.$router.push(page);
     },
   },
