@@ -25,6 +25,7 @@ export default {
 <style lang="sass">
 html
   overflow-y: auto !important
+  height: 100vh !important
 
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif
