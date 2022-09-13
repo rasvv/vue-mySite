@@ -1,5 +1,5 @@
 <template>
-  <v-app height="100vh" class="d-flex justify-center">
+  <v-app height="100vh" overflow-y-auto class="d-flex justify-center">
     <Header />
     <v-main>
       <router-view />
@@ -23,11 +23,14 @@ export default {
 </script>
 
 <style lang="sass">
+html
+  overflow-y: auto !important
+
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  overflow: auto
+  // overflow: hidden
   text-align: center
   color: #2c3e50
 
