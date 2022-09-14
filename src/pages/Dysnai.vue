@@ -1,12 +1,12 @@
 <template>
-  <v-card height="100vh">
+  <v-card height="100vh" class="overflow-auto">
     <v-toolbar flat color="primary" dark class="text-center">
       <v-toolbar-title class="text-center"
         >Сочинение на тему "Как я провел лето".</v-toolbar-title
       >
     </v-toolbar>
     <v-tabs vertical>
-      <v-tab class="d-flex justify-start">
+      <v-tab flat height="90vh" class="d-flex justify-start overflow-auto">
         <v-icon left>
           mdi-message-bulleted
         </v-icon>

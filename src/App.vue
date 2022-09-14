@@ -61,6 +61,10 @@ html
 .row
   justify-content: space-around
 
+.h90
+  height: 90vh
+  overflow: auto
+
 .grids
   gap: 20px
   flex-wrap: wrap
