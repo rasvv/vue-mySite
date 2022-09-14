@@ -83,8 +83,10 @@
             <v-card-subtitle>
               Я пять раз был на фестивалях молодых атомщиков, как в России, так
               и в Литве. О моих впечатлениях о поездке на Диснай-2005 можно
-              прочитать
-              <a @click="setPath('/dysnai')">здесь</a>
+              прочитать здесь
+              <v-btn icon to="/dysnai"
+                ><v-icon>mdi-hand-pointing-right</v-icon></v-btn
+              >
             </v-card-subtitle>
           </v-card-subtitle>
         </v-card>

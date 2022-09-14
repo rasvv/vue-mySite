@@ -43,6 +43,11 @@ const router = new Router({
       path: '/dysnai',
       name: 'dysnai',
       component: () => import('../pages/Dysnai.vue')
+		},
+		{
+      path: '/vue-mysite/dysnai',
+      name: 'dysnai',
+      component: () => import('../pages/Dysnai.vue')
 		}
 	]
 })
