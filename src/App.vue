@@ -1,23 +1,23 @@
 <template>
   <v-app height="100vh" overflow-y-auto class="d-flex justify-center">
-    <Header />
+    <!-- <Header /> -->
     <v-main>
       <router-view />
     </v-main>
-    <Footer />
+    <!-- <Footer /> -->
   </v-app>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+// import Header from "./components/Header.vue";
+// import Footer from "./components/Footer.vue";
 // import MainPage from './components/MainPage.vue'
 
 export default {
   name: "App",
   components: {
-    Header,
-    Footer,
+    // Header,
+    // Footer,
   },
 };
 </script>
@@ -39,7 +39,7 @@ html
   /* margin-top: 60px; */
 
 .v-application--wrap
-  min-height: 78vh
+  // min-height: 78vh
 
 .avatar
   height: 50vh
