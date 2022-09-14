@@ -7,10 +7,10 @@ const router = new Router({
 	routes: [
 		{
 			path: '/',
-			redirect: '/vue-mysite'
+			redirect: '/vue-mySite'
 		},
 		{
-      path: '/vue-mysite',
+      path: '/vue-mySite',
       name: 'main',
       component: () => import('../pages/MainForm.vue')
 		},
@@ -45,9 +45,15 @@ const router = new Router({
       component: () => import('../pages/Dysnai.vue')
 		},
 		{
-      path: '/vue-mysite/dysnai',
+      path: '/vue-mySite/dysnai',
       name: 'dysnai',
       component: () => import('../pages/Dysnai.vue')
+		},
+		{
+			path: '/vue-mySite/:queryParams(.*)',
+			name: 'dysnai',
+			component: () => import('../pages/Dysnai.vue'),
+			props: true
 		}
 	]
 })
