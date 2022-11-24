@@ -23,7 +23,8 @@ export default new Vuex.Store({
     myHandmadeJson: handmadeJson,
     myDysnaiJson: dysnaiJson,
     album: photosJson, //текщий альбом (Фото, Хобби, Сайты)
-    albumName: 'Фотографии'
+    albumName: 'Фотографии',
+		fontsize: 14
 
   },
   mutations: {

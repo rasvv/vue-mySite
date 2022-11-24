@@ -47,12 +47,12 @@ const router = new Router({
 		},
 		{
       path: '/vue-mySite/dysnai',
-      name: 'dysnai',
+      name: 'dysnai1',
       component: () => import('../pages/Dysnai.vue')
 		},
 		{
 			path: '/vue-mySite/:queryParams(.*)',
-			name: 'dysnai',
+			name: 'dysnai2',
 			component: () => import('../pages/Dysnai.vue'),
 			props: true
 		}
