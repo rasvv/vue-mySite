@@ -12,8 +12,8 @@ const router = new Router({
 		{
       path: '/vue-mySite',
       name: 'main',
-      // component: () => import('../pages/MainForm.vue')
-      component: () => import('../pages/Dysnai.vue')
+      component: () => import('../pages/MainForm.vue')
+      // component: () => import('../pages/Dysnai.vue')
 		},
 		{
       path: '/mysites',
