@@ -1,6 +1,23 @@
 <template>
   <v-container>
-    <v-row dense>
+    <v-row v-for="card in aboutmeJson" :key="card.title" dense>
+      <v-col cols="12">
+        <v-card
+          :color="card.color"
+          dark
+          @click="setAlbum(card.getter, card.link)"
+        >
+          <v-card-title class="d-flex justify-center">
+            {{ card.title }}
+          </v-card-title>
+
+          <v-card-subtitle v-for="sub in card.subtitle" :key="sub.id">
+            {{ sub.text }}
+          </v-card-subtitle>
+        </v-card>
+      </v-col>
+    </v-row>
+    <!-- <v-row dense>
       <v-col cols="12">
         <v-card color="#385F73" dark to="/mysites">
           <v-card-title class="d-flex justify-center">
@@ -8,7 +25,6 @@
           </v-card-title>
 
           <v-card-subtitle>
-            <!-- <p> -->
             Программированием увлекаюсь со школы, знаю несколько языков.
             Приходилось писать на Delphi, Basic, Pascal, C#, Python и даже на
             AutoLisp. Много работал с базами данных. В арсенале опыт работы с MS
@@ -18,7 +34,6 @@
             таблиц стилей CSS. Интенсивно изучаю JavaScript. Освоил фреймворки:
             VueJS и ReactJS. Осуществлял верстку интерфейса, разрабатываемого на
             Angular. С моими проектами можно ознакомиться на этом сайте.
-            <!-- </p> -->
           </v-card-subtitle>
         </v-card>
       </v-col>
@@ -83,19 +98,16 @@
               Я пять раз был на фестивалях молодых атомщиков, как в России, так
               и в Литве. О моих впечатлениях о поездке на Диснай-2005 можно
               прочитать здесь
-              <v-btn icon to="/dysnai"
-                ><v-icon>mdi-hand-pointing-right</v-icon></v-btn
-              >
             </v-card-subtitle>
           </v-card-subtitle>
         </v-card>
       </v-col>
-    </v-row>
+    </v-row> -->
   </v-container>
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapState } from "vuex";
 
 export default {
   data: () => ({
@@ -106,12 +118,30 @@ export default {
   methods: {
     ...mapActions(["updateAlbum", "updateView"]),
     setAlbum(album, page) {
-      this.updateAlbum(album);
+      // this.updateAlbum(this.setGetter(album));
+      this.updateAlbum(this.setGetter(album));
+      // this.updateAlbum(this.getPhotosLinks);
       this.updateView("links");
+      // this.setPath("/photos");
       this.setPath(page);
     },
     setPath(page) {
       this.$router.push(page);
+    },
+    setGetter(getter) {
+      let album = {};
+      switch (getter) {
+        case "getPhotosLinks":
+          album = this.getPhotosLinks;
+          break;
+        case "getHandmadeLinks":
+          album = this.getHandmadeLinks;
+          break;
+        case "getHobbyLinks":
+          album = this.getHobbyLinks;
+          break;
+      }
+      return album;
     },
   },
   computed: {
@@ -119,6 +149,7 @@ export default {
       return "47";
     },
     ...mapGetters(["getHobbyLinks", "getHandmadeLinks", "getPhotosLinks"]),
+    ...mapState(["aboutmeJson"]),
   },
 };
 </script>

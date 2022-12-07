@@ -1,7 +1,7 @@
 <template>
-  <v-card height="100vh" class="overflow-auto" color="primary lighten-2">
+  <v-card height="86vh" class="overflow-auto" color="primary lighten-2">
     <v-card-title flat height="9vh">
-      <v-row height="9vh">
+      <v-row>
         <v-col cols="9" class="d-flex align-center justify-center">
           <h2>Сочинение на тему "Как я провел лето"</h2>
         </v-col>
@@ -24,7 +24,7 @@
     <v-tabs vertical color="primary darken-2">
       <v-tab
         flat
-        height="90vh"
+        height="78vh"
         class="d-flex justify-start overflow-auto"
         light
       >
@@ -89,7 +89,7 @@
       </v-tab>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               <b>Диснай (Dysnai)</b> — международный фестиваль молодых
@@ -146,7 +146,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               <b>А теперь начнем. Год 2005 от РХ…</b>
@@ -220,7 +220,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               Не доезжая около 300 метров до поляны всех первогодок (в том числе
@@ -310,7 +310,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               День первогодки начался, как и любой день. После завтрака всех
@@ -359,7 +359,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text class="overflow-auto">
             <p class="text-justify" :style="txt">
               В 9 утра выехали с поляны в ЛОК (лечебно-оздоровительный комплекс
@@ -417,7 +417,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               Заданием на этот день было выборы президента поляны. От каждой
@@ -478,7 +478,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               На этот день заданием было разыграть сказку "Алиса в стране
@@ -511,7 +511,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               В предыдущий вечер я рано лег спать, даже не пошел на стыковку.
@@ -657,7 +657,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               Скажу сразу – отоспаться нам не дали. Подъем в 9, зарядка,
@@ -739,7 +739,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-card flat height="90vh" class="overflow-auto">
+        <v-card flat height="78vh" class="overflow-auto">
           <v-card-text>
             <p class="text-justify" :style="txt">
               В восемь часов утра начал разъезжаться народ с поляны. Первыми мы
